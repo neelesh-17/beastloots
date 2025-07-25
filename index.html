@@ -1,132 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BeastLoots - Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BeastLoots</title>
   <style>
-    :root {
-      --accent: #ff416c;
-      --accent2: #ff4b2b;
-      --bg: linear-gradient(135deg, #1e1e2f, #111118);
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    body {
-      height: 100vh;
-      background: var(--bg);
-      font-family: 'Outfit', sans-serif;
       overflow: hidden;
+    }
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d1a;
+      color: white;
+      overflow: hidden;
+    }
+    .container {
       display: flex;
       align-items: center;
       justify-content: center;
-      perspective: 1000px;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      background: radial-gradient(circle at center, #1a1a2e 20%, #0d0d1a 80%);
     }
-
-    .bg-3d {
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, #ff416c20 10%, transparent 60%),
-                  repeating-conic-gradient(from 0deg, #333 0deg, #222 30deg, #111 60deg);
-      animation: rotateBg 30s linear infinite;
-      z-index: -2;
-      transform: rotateX(60deg) rotateZ(0deg);
-      opacity: 0.2;
-    }
-
-    @keyframes rotateBg {
-      0% { transform: rotateX(60deg) rotateZ(0deg); }
-      100% { transform: rotateX(60deg) rotateZ(360deg); }
-    }
-
     .card {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      padding: 3rem;
-      text-align: center;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 25px 80px rgba(255, 65, 108, 0.3);
-      transform-style: preserve-3d;
-      transform: rotateX(10deg) rotateY(-10deg);
-      transition: transform 0.5s ease;
-      animation: float 6s ease-in-out infinite;
-      z-index: 1;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: rotateX(10deg) rotateY(-10deg) translateY(0); }
-      50% { transform: rotateX(10deg) rotateY(-10deg) translateY(-10px); }
-    }
-
-    .card:hover {
-      transform: rotateX(0deg) rotateY(0deg) translateZ(20px);
-    }
-
-    h1 {
-      font-size: 3.2rem;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      color: #ccc;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .glow-dot {
-      width: 14px;
-      height: 14px;
-      background: var(--accent2);
-      border-radius: 50%;
-      box-shadow: 0 0 12px var(--accent2), 0 0 30px var(--accent2);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px red;
       animation: pulse 1.5s infinite;
-      margin: 0 auto;
     }
-
     @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.5); opacity: 0.5; }
-      100% { transform: scale(1); opacity: 1; }
+      0% { box-shadow: 0 0 5px red; }
+      50% { box-shadow: 0 0 20px red; }
+      100% { box-shadow: 0 0 5px red; }
     }
-
-    footer {
+    .footer {
       position: absolute;
-      bottom: 20px;
-      font-size: 0.85rem;
-      color: #666;
-      z-index: 2;
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      p {
-        font-size: 1rem;
-      }
+      bottom: 10px;
+      font-size: 0.8em;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  <div class="bg-3d"></div>
-
-  <div class="card">
-    <h1>BeastLoots</h1>
-    <p>Your next-level earning experience is almost here.</p>
-    <div class="glow-dot"></div>
+  <div class="container">
+    <div class="card">
+      <h1 style="color: #ff2c2c;">BeastLoots</h1>
+      <p>Your next-level earning experience is almost here.</p>
+      <div style="margin-top: 10px;">
+        <div style="width: 10px; height: 10px; background: red; border-radius: 50%; margin: auto;"></div>
+      </div>
+    </div>
+    <div class="footer">© 2025 BeastLoots.com • All rights reserved</div>
   </div>
-
-  <footer>&copy; 2025 BeastLoots.com • All rights reserved</footer>
 </body>
 </html>
